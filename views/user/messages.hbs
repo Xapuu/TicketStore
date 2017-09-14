@@ -1,0 +1,13 @@
+<div class="container">
+
+    {{#each messages}}
+    <div class="well">
+        {{this.sendFromUser.fullName}} said
+
+        <div class="container"> {{this.message}}</div>
+
+        <div> on {{this.dateSend}}
+        </div>
+    </div>
+    {{/each}}
+</div>

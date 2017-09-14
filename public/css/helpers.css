@@ -1,0 +1,59 @@
+/*IMPORTING FONTS*/
+@font-face {
+    font-family: Title;
+    src: url('fonts/title.ttf');
+}
+
+@font-face {
+    font-family: Global;
+}
+
+/*TEXT ALIGNMENTS*/
+.tCenter {
+    text-align: center;
+}
+
+.tLeft {
+    text-align: left;
+}
+
+.tRight {
+    text-align: right;
+}
+
+/*CONTAINERS*/
+.spreadHor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.spreadVer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/*WIDTH SIZES*/
+
+.width1 {
+    min-width: 25%;
+    max-width: 100%;
+}
+
+.width2 {
+    min-width: 50%;
+    max-width: 100%;
+}
+
+.width3 {
+    min-width: 75%;
+    max-width: 100%;
+}
+
+.width4 {
+    min-width: 100%;
+    max-width: 100%;
+}

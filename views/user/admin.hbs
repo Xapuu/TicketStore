@@ -1,0 +1,40 @@
+{{#if user.admin}}
+    <h1>Im special </h1>
+    <div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" method="post" action="/updateRate">
+            <fieldset>
+                <div class="form-group row">
+                    <label for="ticketPrice" class="col-2 col-form-label">Price Rate</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="0" id="priceRate" name="priceRate">
+                    </div>
+                </div>
+                <button class="submit" >Change</button>             
+            </fieldset>
+        </form>
+    </div>
+</div>
+{{/if}}
+
+<div id='evevntsBox' class="container">     
+    {{#each elems}}
+    <div class="well eventElem">
+        <h1>{{this.eventTitle}}</h1>
+        <img class="eventPreviewImg" src="{{this.img}}" alt="">
+        <div class="content">{{this.description}}
+            <div>
+                <tags>{{this.tags}}</tags>
+                <div>{{this.eventDate}}</div>
+                <div>{{this.ticketPrice}}</price>
+
+                   
+                    <a href="approvalView{{this.id}}"><button>Info</button></a>
+                   
+                </div>
+                <div>{{this.author.fullName}}</div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

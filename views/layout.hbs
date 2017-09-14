@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Ticket Store</title>
+    <link rel="stylesheet" href="/css/helpers.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-tagsinput.min.js"></script>
+    <script src="/javascripts/mainJs.js"></script>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand nav-header navbarHeader" href="/">
+                        <div class="navLogo"></div>
+                        Ticketeer
+                    </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Concerts</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Shows</a></li>
+                            <li role="separator" class="divider"></li>
+
+                            <!--if the user is an admin or editor-->
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                        {{#if user}}
+                        <li><a href="/createEvent">Create new Event</a></li>
+                        <li><a href="/profile">MyProfile</a></li>
+                        {{/if}}
+                    </li>
+                </ul>
+                {{#if user}}
+                <ul class="nav navbar-nav navbar-right">
+
+                    {{#if user.msgFlag}}
+                    <li id="profileButton" class="event">Hello {{user.fullName}}</li>
+                    {{else}}
+                    <li id="profileButton" class="noEvent">Hello {{user.fullName}}</li>
+                    {{/if}}
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+                {{else}}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/register">Sign up</a></li>
+                    <li><a href="/login">Sign in</a></li>
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+
+    {{#if error }}
+    <h2>{{error}}</h2>
+    {{/if}} {{{body}}}
+
+
+</body>
+
+
+
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; this is the footer</p>
+    </div>
+</footer>
+
+</html>

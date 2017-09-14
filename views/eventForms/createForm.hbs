@@ -1,0 +1,84 @@
+
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" method="post" action="/createEvent">
+            <fieldset>
+                <h2>The current Price rate is {{rate.rate}} %</h2>
+                <input class="form-control rate" value="{{rate.rate}}" name="priceRate"></input>
+                <div class="form-group row">
+                    <label for="eventTitle" class="col-2 col-form-label">Event Title</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" value="Event Title" id="eventTitle" name="eventTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="5" id="description" name="description">Description</textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="img" class="col-2 col-form-label">Img Url</label>
+                    <div class="col-10">
+                        <input class="form-control" type="url" value="" id="img" name="img">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="location" class="col-2 col-form-label">Location</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" value="" id="location" name="">
+                         
+                        <button id="mapSubmit" type="button" class="btn-info">Check Location</button>
+
+                        <h3>Location</h3>
+                        <input class="form-control longAt"   name="location"></input>
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var uluru = { lat: 42.698334, lng: 23.319941 };                                
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 6,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5U4qgJfbbGVBQc1Ewa0X0vJpZrvyIRSM&callback=initMap">
+                        </script>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketPrice" class="col-2 col-form-label">Ticket Price</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="0" id="ticketPrice" name="ticketPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketCount" class="col-2 col-form-label">Tickets for Sale</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="0" id="ticketCount" name="ticketCount">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tags" class="col-2 col-form-label">Tags</label>
+                    <div class="col-10">
+                        <input type="text" value="Party" data-role="tagsinput" name="tags"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dateOfEvent" class="col-2 col-form-label">Event Date</label>
+                    <div class="col-10">
+                        <input class="form-control" type="datetime-local" value="" id="dateOfEvent" name="eventDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <a class="btn btn-default" href="/">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create Event</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

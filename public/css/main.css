@@ -1,0 +1,72 @@
+.navbarHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Title;
+    font-size: 30px !important;
+    text-transform: uppercase;
+
+    transition: all 0.4s;
+    background-color: #F8F8F8;
+    border-right: 1px solid gray;
+}
+
+.navLogo {
+    background-image: url("../img/Logo.png");
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    top: -15px;
+    height: 50px;
+    width: 50px;
+}
+
+.navbarHeader:hover {
+    background-color: #AAAAAA !important;
+    border-right:1px solid white;
+}
+
+#regButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.eventElem{
+    max-width: 25%;
+    position: relative;
+    float: left;
+}
+
+.eventElem .eventPreviewImg{
+    max-width: 100%
+}
+
+#map {
+        height: 400px;
+        width: 100%;
+       }
+.longAt{
+    visibility: hidden;
+}
+
+.rate{
+    visibility: hidden
+}
+
+.bootstrap-tagsinput {
+            width: 100%;
+        }
+        
+.label {
+            line-height: 2 !important;
+        }
+
+.event{
+    background-color: green;
+}
+
+.noEvent{
+    background-color: orange;
+}

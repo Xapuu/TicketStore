@@ -1,0 +1,49 @@
+<div class="container">
+{{#if user.admin}}
+    <a href="/admin"><button>Im special</button></a>
+{{/if}}
+    <a href="/myMessages"><button>My messages</button></a>
+
+
+<h1>Hosted by me</h1>
+<div id='evevntsBox' class="container">
+    {{#each elems}}
+    <div class="well eventElem">
+        <h1>{{this.eventTitle}}</h1>
+        <img class="eventPreviewImg" src="{{this.img}}" alt="">
+        <div class="content">{{this.description}}
+            <div>
+                <tags>{{this.tags}}</tags>
+                <div>{{this.eventDate}}</div>
+                <div>{{this.ticketPrice}}</price>
+                    <div>{{this.location}}</div>
+                </div>
+                <a href="/editEvent{{this.id}}"><button class="btn-info">Edit</button></a>
+                <a href="/deleteEvent{{this.id}}"><button class="btn-danger">Delete</button></a>
+                <div>{{this.author.fullName}}</div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<h1>Attended by me</h1>
+<div id='evevntsBoxAtended' class="container">
+    {{#each myEvents}}
+    <div class="well eventElem">
+        <h1>{{this.eventTitle}}</h1>
+        <img class="eventPreviewImg" src="{{this.img}}" alt="">
+        <div class="content">{{this.description}}
+            <div>
+                <tags>{{this.tags}}</tags>
+                <div>{{this.eventDate}}</div>
+                <div>{{this.ticketPrice}}</price>
+                    <div>{{this.location}}</div>
+                </div>
+                <div>{{this.author.fullName}}</div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+</div>

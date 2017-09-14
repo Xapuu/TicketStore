@@ -1,0 +1,98 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" method="post" action="/buyTicket{{event.id}}">
+            <fieldset>
+                <div class="form-group row">
+                    <label for="eventTitle" class="col-2 col-form-label">Event Title</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" value="{{event.eventTitle}}" id="eventTitle" name="eventTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="5" id="description" name="description">{{event.description}}</textarea>
+                </div>
+                <div class="form-group row">
+
+                    <img src="{{event.img}}">
+
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-10">
+                        <input class="form-control longAt" style="visibility: hidden" value="{{event.location}}" >
+                        <h3>Location</h3>
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var uluru = JSON.parse($('.longAt').val());
+                                
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 14,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5U4qgJfbbGVBQc1Ewa0X0vJpZrvyIRSM&callback=initMap">
+                        </script>
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketPrice" class="col-2 col-form-label">Ticket Price</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="{{event.ticketPrice}}" id="ticketPrice" name="ticketPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketCount" class="col-2 col-form-label">Tickets for Sale</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="{{event.ticketCount}}" id="ticketCount" name="ticketCount">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tags" class="col-2 col-form-label">Tags</label>
+                    <div class="col-10">
+                        <input type="text" value="{{event.tags}}" data-role="tagsinput" name="tags" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dateOfEvent" class="col-2 col-form-label">Event Date</label>
+                    <h1>On {{event.eventDate}}</h1>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <a class="btn btn-default" href="/">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Purchase</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <div id="disqus_thread"></div>
+
+</div>
+<script>
+
+{{!--var disqus_config = function () {
+this.page.url = "example.com";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "{{event.id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};--}}
+
+
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://local-19.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

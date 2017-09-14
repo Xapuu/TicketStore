@@ -1,0 +1,61 @@
+
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" method="post" action="/editEvent{{event.id}}">
+            <fieldset>
+                <div class="form-group row">
+                    <label for="eventTitle" class="col-2 col-form-label">Event Title</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" value="{{event.eventTitle}}" id="eventTitle" name="eventTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="5" id="description" name="description">{{event.description}}</textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="img" class="col-2 col-form-label">Img Url</label>
+                    <div class="col-10">
+                        <input class="form-control" type="url" value="{{event.img}}" id="img" name="img">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="location" class="col-2 col-form-label">Location</label>
+                    <div class="col-10">
+                        <input class="form-control" type="url" value="{{event.location}}" id="location" name="location">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketPrice" class="col-2 col-form-label">Ticket Price</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="{{event.ticketPrice}}" id="ticketPrice" name="ticketPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ticketCount" class="col-2 col-form-label">Tickets for Sale</label>
+                    <div class="col-10">
+                        <input class="form-control" type="number" value="{{event.ticketCount}}" id="ticketCount" name="ticketCount">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tags" class="col-2 col-form-label">Tags</label>
+                    <div class="col-10">
+                        <input type="text" value="{{event.tags}}" data-role="tagsinput" name="tags"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dateOfEvent" class="col-2 col-form-label">Event Date</label>
+                    <div class="col-10">
+                        <input class="form-control" type="datetime-local" value="{{event.eventDate}}" id="dateOfEvent" name="eventDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <a class="btn btn-default" href="/">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
